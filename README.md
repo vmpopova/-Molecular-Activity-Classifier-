@@ -1,21 +1,23 @@
-# -Molecular-Activity-Classifier-
-Repository includes an ML pipeline to predict pharmacological metrics (IC50, CC50, SI) of molecules. Uses XGBoost, Random Forest, Logistic Regression, and visualizations (PCA, UMAP, SHAP) for data analysis and interpretation. Accelerates drug candidate screening.
 
-## Why This Project Matters for Chemistry  
+# Прогнозирование фармакологической активности молекул
 
-This project bridges the gap between chemistry and machine learning by enabling rapid, data-driven predictions of molecular activity (IC50), toxicity (CC50), and selectivity (SI). Instead of relying solely on costly and time-consuming lab experiments, we use molecular descriptors — numerical representations of chemical structure, such as electronic properties, molecular weight, and topological indices — to build predictive models.  
+Репозиторий содержит пайплайн машинного обучения для предсказания ключевых фармакологических показателей — **IC50** (активность), **CC50** (токсичность) и **SI** (индекс селективности) — на основе молекулярных дескрипторов.
 
-These models help chemists identify promising compounds for antiviral or pharmaceutical research faster and more efficiently. By understanding which molecular features (e.g., PEOE_VSA, BCUT2D, BalabanJ) drive activity or toxicity, we empower rational design of safer and more effective molecules. This accelerates the drug discovery process and helps allocate resources to the most promising candidates.  
+## Цель проекта
 
-In summary, our project demonstrates how machine learning can transform chemical research, offering actionable insights that support smarter, faster, and more cost-effective development of new therapeutic compounds.  
+Проект направлен на ускорение предварительного отбора перспективных лекарственных соединений. Вместо лабораторных тестов используются численные характеристики молекул, чтобы предсказать эффективность и безопасность соединений с помощью моделей машинного обучения.
 
-## About the Project  
-This project focuses on building robust machine learning models to predict key pharmacological indicators — IC50, CC50, and SI — using molecular descriptors.  
-✔️ Data exploration, outlier detection, missing value imputation, feature scaling  
-✔️ Models: Random Forest, XGBoost, Logistic Regression  
-✔️ Hyperparameter tuning and feature selection with SHAP  
-✔️ Dimensionality reduction: PCA, UMAP  
-✔️ Visualizations: ROC curves, feature importance, clustering  
-✔️ Interpretability: insights into molecular structure relevance  
+## Состав работы
 
-This work highlights end-to-end machine learning skills — from data cleaning to advanced visualization — and bridges model results with actionable recommendations for chemists.
+* Очистка и анализ данных: удаление нерелевантных признаков, логарифмирование, работа с выбросами, обработка пропусков
+* Построение моделей для следующих задач:
+
+  * Регрессия: IC50, CC50, SI
+  * Классификация: IC50 > медианы, CC50 > медианы, SI > медианы, SI > 8
+* Используемые модели: Logistic Regression, Random Forest, XGBoost, SVM, MLP
+* Подбор гиперпараметров, отбор признаков, масштабирование, PCA
+* Визуализация: ROC-кривые, матрицы ошибок, важность признаков
+
+## Результат
+
+Построены и сравнены модели для всех задач. Полученные метрики и интерпретация признаков подтверждают применимость машинного обучения для химического анализа и помогают отбирать соединения с оптимальным профилем активности и токсичности.
